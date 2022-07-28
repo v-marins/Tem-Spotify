@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Prompt:wght@800&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: red;
+    font-weight: bolder;
+}
+
+.navbar{
+    font-weight: bold !important;
+}
+
+#img{
+    max-width: 20%;
+    display: block;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#textErro{
+    font-family: monospace !important;
+    margin-top: 3%;
+}

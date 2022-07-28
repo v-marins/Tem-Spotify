@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Prompt:wght@800&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: black;
+
+}
+
+.navbar{
+    font-weight: bold !important;
+}
+
+#telaPlaylists{
+    margin: 3%;
+    padding: 2%;
+    background-color: white;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .05);
+  
+}
+
+li{
+    list-style-type: none;
+}

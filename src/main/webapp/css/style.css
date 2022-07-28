@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Prompt:wght@800&display=swap');
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: #1DB954;
+}
+
+#titulo{
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#conteudo{
+    margin: 1% 10%;
+    background-color: #1DB954;
+    color: black;
+    padding: 2rem 1rem 2rem 1rem;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .05);
+
+}
+.signing-text{
+    font-style: normal;
+    font-weight: 800 !important;
+}
+
+.btn-primary{
+    background-color: white;
+    border-color: #1DB954;
+    color: black;
+}
+
+.btn-primary:hover{
+    background-color: green;
+    border-color: #1DB954;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+a:hover{
+    color: green;
+}
+
+footer{
+    text-align: center;
+    font-size: small;
+}
+

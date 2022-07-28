@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+                
+    
+    
+    <wb-module deploy-name="TemAulaSpotify">
+                                
+        
+        
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+                        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp"/>
+        <dependent-module archiveName="mysql-connector-java-8.0.28.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/vmarins/eclipse-workspace/TemAulaSpotify/mysql-connector-java-8.0.28.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jstl.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/vmarins/eclipse-workspace/TemAulaSpotify/jstl.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="taglibs-standard-impl-1.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/vmarins/eclipse-workspace/TemAulaSpotify/taglibs-standard-impl-1.2.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                                
+        
+        
+        <property name="context-root" value="TemAulaSpotify"/>
+                                
+        
+        
+        <property name="java-output-path" value="/TemAulaSpotify/build/classes"/>
+                            
+    
+    
+    </wb-module>
+            
+
+
+</project-modules>
