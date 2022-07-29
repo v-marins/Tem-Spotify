@@ -47,7 +47,7 @@ public class UploadMusicaServlet extends HttpServlet {
 				
 				InputStream original = request.getPart("mp3File").getInputStream();
 				String nomeArquivoOriginal = request.getPart("mp3File").getSubmittedFileName();
-				String nomeArquivo = getServletContext().getRealPath("/")+"musicas/"+request.getPart("mp3File").getSubmittedFileName();
+				String nomeArquivo = getServletContext().getRealPath("/musicas/")+request.getPart("mp3File").getSubmittedFileName();
 				System.out.println("Arquivo" + nomeArquivo);
 				
 				
@@ -62,8 +62,8 @@ public class UploadMusicaServlet extends HttpServlet {
 				arquivoMp3.close();
 				
 				Musica music = new Musica();
-				music.setArtista(artista);
 				music.setTitulo(musica);
+				music.setArtista(artista);
 				music.setAlbum(album);
 				music.setEstilo(estilo);
 				music.setLinkMp3("musicas/"+nomeArquivoOriginal);

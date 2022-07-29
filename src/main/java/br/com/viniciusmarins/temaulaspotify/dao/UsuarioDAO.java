@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.xdevapi.Statement;
-
 import br.com.viniciusmarins.temaulaspotify.model.Usuario;
 
 public class UsuarioDAO implements GenericDAO {

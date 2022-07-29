@@ -5,6 +5,7 @@ use temspotify;
 
 create table tblmusica(
 idMusica int not null auto_increment,
+titulo varchar (100),
 artista varchar(100),
 album varchar(100),
 estilo int,
