@@ -3,7 +3,7 @@
 body{
     font-family: 'Poppins', sans-serif;
     background-color: black;
-    color: white;
+    color: black;
 }
 
 
@@ -12,30 +12,19 @@ body{
 }
 
 
-h2{
-    font-family: 'Prompt' , sans-serif;
-    color: #1db959;
-	margin-top: 30px;
+h1{
 	text-align: center;
-	font-weight: 800;
-}
-
-h4{
-    font-family: 'Prompt' , sans-serif;
-	text-align: center;
-    color: black;
 }
 
 #conteudo{
-    margin: 1% 10%;
-    background-color: #1DB954;
-    color: black;
-    padding: 2rem 1rem 2rem 1rem;
+    margin: 3%;
+    padding: 2%;
+    background-color: white;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, .05);
 }
 
 .btn-primary{
-    background-color: white;
+    background-color: #1db959;
     border-color: #1db959;
     color: black;
 }
@@ -43,10 +32,4 @@ h4{
 .btn-primary:hover{
     background-color: green;
     border-color: green;
-}
-
-footer{
-    text-align: center;
-    font-size: small;
-    color: #1db959;
 }

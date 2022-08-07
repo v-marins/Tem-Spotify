@@ -29,7 +29,7 @@
           <a class="nav-link active" aria-current="page" href="./myaccount.jsp">Home</a>
           <a class="nav-link" href="./minhasplaylists">Minhas Playlists</a>
           <a class="nav-link" href="./novaplaylist">Nova Playlists</a>
-          <a class="nav-link" href="./novamusica">Adicionar Música</a>
+          <a class="nav-link" href="./novamusica">Adicionar M&uacute;sica</a>
           <a class="nav-link" href="#">Logout</a>
         </div>
       </div>
@@ -37,22 +37,18 @@
   </nav>
         
         <!-- Interacoes -->
-        <c:forEach var="playlist" items="${Usuario.playlists}">
+        
         <div class="row" id="telaPlaylists">
-			<div class="col-md-2">
+        <div class="col-md-7">
+			<img alt="" src="images/imgplaylists.png" class="img-fluid">
 			</div>
-			<div class="col-md-8 text-center">
-				${playlist.titulo}
-			<ul>
-			<c:forEach var="musica" items="playlist.musicas">
-			<li>${Musica.titulo} - ${Musica.artista}</li>
+			<div class="col-md-5 text-center">
+			<h1>Suas Playlists:</h1>
+			 <c:forEach var="playlist" items="${Usuario.playlists}">
+				<p><a class="btn btn-primary" href="playlistdetails?id=${playlist.id}" title="Detalhes da Playlist">${playlist.titulo}</a>
+					<a class="btn btn-primary" href="#" title="Tocar">Tocar</a></p>
 			</c:forEach>
-			</ul>
 			</div>
-			<div class="col-md-2">
-			</div>
-		</div>
-		</c:forEach>
-    
+		</div>    
 </body>
 </html>

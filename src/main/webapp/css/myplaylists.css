@@ -22,3 +22,14 @@ body{
 li{
     list-style-type: none;
 }
+
+.btn-primary{
+    background-color: white;
+    border-color: #1db959;
+    color: black;
+}
+
+.btn-primary:hover{
+    background-color: green;
+    border-color: green;
+}

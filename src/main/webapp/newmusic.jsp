@@ -27,25 +27,20 @@
           <a class="nav-link active" aria-current="page" href="./myaccount.jsp">Home</a>
           <a class="nav-link" href="./minhasplaylists">Minhas Playlists</a>
           <a class="nav-link" href="./novaplaylist">Nova Playlists</a>
-          <a class="nav-link" href="./novamusica">Adicionar Música</a>
+          <a class="nav-link" href="./novamusica">Adicionar M&uacute;sica</a>
           <a class="nav-link" href="#">Logout</a>
         </div>
       </div>
     </div>
   </nav>
-    <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-md-12" id="titulo">
-                <h2>Upload de Música</h2>
-            </div>
-        </div>
 
         <div class="row" id="conteudo">
-            <div class="col-md-3">
+            <div class="col-md-7">
+            <img alt="" src="images/imguploadmusica.png" class="img-fluid">
             </div>
-            <div class="col-md-6">
-                <h4>Preencha os campos</h4>
+           
+            <div class="col-md-5">
+                <h1>Preencha os campos</h1>
                 
                 <!--Formulï¿½rio Login-->
                 <form role="form"data-bitwarden-watching="1" action="uploadmusica" method="post" enctype="multipart/form-data">
@@ -87,13 +82,5 @@
             <div class="col-md-3">
             </div>
        </div>
-       <div class="row">
-       <footer>    
-        <div class="col-md-12">
-            <span>Desenvolvido por Vinicius Marins.</span>
-        </div>
-    </footer>
-        </div>
-    </div>
 </body>
 </html>

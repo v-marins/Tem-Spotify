@@ -21,9 +21,14 @@ import br.com.viniciusmarins.temaulaspotify.model.Usuario;
  */
 @WebServlet({ "/PlaylistServlet", "/playlistservlet", "/minhasplaylists"})
 public class PlaylistServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+
        
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public PlaylistServlet() {
@@ -39,6 +44,7 @@ public class PlaylistServlet extends HttpServlet {
 		String pagina = "/index.html";
 		try {
 			Usuario user = (Usuario) request.getSession().getAttribute("Usuario");
+			
 			if(user != null) { //Usuário logado?
 				if(user.getPlaylists() == null) { //não tem playlist
 					
@@ -48,7 +54,7 @@ public class PlaylistServlet extends HttpServlet {
 					List<Object> lista = plDAO.read(user.getId());
 					ds.getConnection().close();
 					
-					System.out.println("valores recuperados do BD");
+					System.out.println("playlists recuperadas do BD");
 					
 					// passa pelos elementos que vieram do banco e seto o usuário
 					if(lista != null) {
@@ -64,7 +70,6 @@ public class PlaylistServlet extends HttpServlet {
 					
 				}
 				
-				//request.getSession().setAttribute("Usuario", user);
 				pagina = "/myplaylists.jsp";
 			}
 			

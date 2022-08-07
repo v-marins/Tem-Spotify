@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<jsp:useBean id="erroSTR" type="java.lang.String" scope="request" />
+<jsp:useBean id="Usuario"
+	type="br.com.viniciusmarins.temaulaspotify.model.Usuario"
+	scope="session" />
+<jsp:useBean id="ListaMusicas" type="java.util.List" scope="request" />
+<jsp:useBean id="idPlaylist" type="java.lang.String" scope="request"/>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
@@ -17,11 +22,11 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
-<link href="css/error.css" type="text/css" rel="stylesheet">
+<link href="css/myplaylists.css" type="text/css" rel="stylesheet">
+<script src="js/myscript.js"></script>
 
 </head>
 <body>
-
 	<nav class="navbar sticky-top navbar-expand-lg navbar-light"
 		style="background-color: #1DB954">
 		<div class="container">
@@ -37,31 +42,35 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link disabled" aria-current="page" href="#">Home</a>
-					<a class="nav-link disabled" href="#">Minhas Playlists</a> <a
-						class="nav-link disabled" href="#">Nova Playlists</a> <a
-						class="nav-link disabled" href="#">Adicionar M&uacute;sica</a> <a
-						class="nav-link disabled" href="#">Logout</a>
+					<a class="nav-link active" aria-current="page"
+						href="./myaccount.jsp">Home</a> <a class="nav-link"
+						href="./minhasplaylists">Minhas Playlists</a> <a class="nav-link"
+						href="./novaplaylist">Nova Playlists</a> <a class="nav-link"
+						href="./novamusica">Adicionar M&uacute;sica</a> <a
+						class="nav-link" href="#">Logout</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<img id="img" src="images/icon-error.png">
-			</div>
+	<!-- Interacoes -->
+
+	<div class="row" id="telaPlaylists">
+		<div class="col-md-7">
+			<img alt="" src="images/imgminhasmusicas.jpg" class="img-fluid">
 		</div>
+		<div class="col-md-5 text-center">
+			<h1>Suas M&uacute;sicas:</h1>
+			<c:forEach var="musica" items="${ListaMusicas}">
+				<p>
+					<a class="btn btn-primary">${musica.titulo} Artista:
+						${musica.artista}</a> <button class="btn btn-primary" 
+						onclick="adicionar(${idPlaylist}, ${musica.id})" href="./incluirnaplaylist?idmusica=${musica.id}&idplaylist=${idPlaylist}"
+						title="Adicionar"> + </button>
+				</p>
 
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="text-center" id="textErro">ERRO: ${erroSTR}</h2>
-			</div>
+			</c:forEach>
 		</div>
-
-
 	</div>
-
 </body>
 </html>

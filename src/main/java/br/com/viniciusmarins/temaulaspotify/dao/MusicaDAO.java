@@ -1,7 +1,9 @@
 package br.com.viniciusmarins.temaulaspotify.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.viniciusmarins.temaulaspotify.model.Musica;
@@ -41,7 +43,31 @@ public class MusicaDAO implements GenericDAO {
 
 	@Override
 	public List<Object> read(Object o) {
-		// TODO Auto-generated method stub
+		
+		try {
+			
+			String sql = "SELECT * FROM tblmusica ORDER BY titulo";
+			PreparedStatement stm = datasource.getConnection().prepareStatement(sql);
+			ResultSet rs = stm.executeQuery();
+			List<Object> lista = new ArrayList<Object>();
+			while(rs.next()) {
+				Musica musica = new Musica();
+				musica.setId(rs.getInt("idMusica"));
+				musica.setTitulo(rs.getString("titulo"));
+				musica.setArtista(rs.getString("artista"));
+				musica.setAlbum(rs.getString("album"));
+				musica.setEstilo(rs.getInt("estilo"));
+				musica.setLinkMp3(rs.getString("linkMP3"));
+				lista.add(musica);
+				
+			}
+			
+			return lista;
+			
+		} catch (Exception e) {
+			System.out.println("Erro ao recuperar músicas" + e.getMessage());
+			
+		}
 		return null;
 	}
 
