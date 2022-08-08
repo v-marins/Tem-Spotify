@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12" id="titulo">
 			<h2>Tem Spotify - Novo Usu&aacute;rio</h2>
@@ -50,6 +51,7 @@
 				<button type="submit" class="btn btn-primary">Cadastrar</button>
 			</form>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

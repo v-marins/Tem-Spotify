@@ -42,12 +42,11 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page"
-						href="./myaccount.jsp">Home</a> <a class="nav-link"
-						href="./minhasplaylists">Minhas Playlists</a> <a class="nav-link"
-						href="./novaplaylist">Nova Playlists</a> <a class="nav-link"
-						href="./novamusica">Adicionar M&uacute;sica</a> <a
-						class="nav-link" href="#">Logout</a>
+					<a class="nav-link active" aria-current="page" href="./myaccount.jsp">Home</a>
+					<a class="nav-link"	href="./novamusica">Upload de M&uacute;sica</a>
+					<a class="nav-link"	href="./novaplaylist">Nova Playlists</a>
+					<a class="nav-link"	href="./minhasplaylists">Minhas Playlists</a>
+					<a class="nav-link" href="#">Logout</a>
 				</div>
 			</div>
 		</div>
@@ -55,6 +54,7 @@
 
 	<!-- Interacoes -->
 
+<div class="container-fluid">
 	<div class="row" id="telaPlaylists">
 		<div class="col-md-7">
 			<img alt="" src="images/imgplaylistdetails.jpg" class="img-fluid">
@@ -62,15 +62,25 @@
 
 		<div class="col-md-5 text-center">
 			<h1>${Playlist.titulo}</h1>
-			<h5><a href="recuperamusicas?idplaylist=${Playlist.id}">+ Adiconar M&uacute;sica</a></h5>
+			<h5>
+				<a href="recuperamusicas?idplaylist=${Playlist.id}">+ Adiconar
+					M&uacute;sica</a>
+			</h5>
 			<c:forEach var="Musica" items="${Playlist.musicas}">
-				<p>
-					<a class="btn btn-primary" href="#" title="Clique para ouvir!"> ${Musica.titulo} |
-						${Musica.artista}</a>
-						<a class="btn btn-primary" href="#" title="Tocar">Tocar</a>
-				</p>
+
+				<div class="row">
+					<div class="col-md-10 text-start">
+
+						<button class="botao">${Musica.titulo} |${Musica.artista}</button><br>
+
+					</div>
+					<div class="col-md-2 text-start">
+						<p><a class="btn btn-primary" href="#" title="Tocar">Play</a></p>
+					</div>
+				</div>
 			</c:forEach>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

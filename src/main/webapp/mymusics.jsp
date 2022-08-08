@@ -3,7 +3,7 @@
 	type="br.com.viniciusmarins.temaulaspotify.model.Usuario"
 	scope="session" />
 <jsp:useBean id="ListaMusicas" type="java.util.List" scope="request" />
-<jsp:useBean id="idPlaylist" type="java.lang.String" scope="request"/>
+<jsp:useBean id="idPlaylist" type="java.lang.String" scope="request" />
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <html lang="pt-BR">
 <head>
@@ -42,35 +42,46 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page"
-						href="./myaccount.jsp">Home</a> <a class="nav-link"
-						href="./minhasplaylists">Minhas Playlists</a> <a class="nav-link"
-						href="./novaplaylist">Nova Playlists</a> <a class="nav-link"
-						href="./novamusica">Adicionar M&uacute;sica</a> <a
-						class="nav-link" href="#">Logout</a>
+					<a class="nav-link active" aria-current="page" href="./myaccount.jsp">Home</a>
+					<a class="nav-link"	href="./novamusica">Upload de M&uacute;sica</a>
+					<a class="nav-link"	href="./novaplaylist">Nova Playlists</a>
+					<a class="nav-link"	href="./minhasplaylists">Minhas Playlists</a>
+					<a class="nav-link" href="#">Logout</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 
 	<!-- Interacoes -->
-
+<div class="container-fluid">
 	<div class="row" id="telaPlaylists">
 		<div class="col-md-7">
 			<img alt="" src="images/imgminhasmusicas.jpg" class="img-fluid">
 		</div>
 		<div class="col-md-5 text-center">
-			<h1>Suas M&uacute;sicas:</h1>
+			<h1>Suas M&uacute;sicas</h1>
 			<c:forEach var="musica" items="${ListaMusicas}">
-				<p>
-					<a class="btn btn-primary">${musica.titulo} Artista:
-						${musica.artista}</a> <button class="btn btn-primary" 
-						onclick="adicionar(${idPlaylist}, ${musica.id})" href="./incluirnaplaylist?idmusica=${musica.id}&idplaylist=${idPlaylist}"
-						title="Adicionar"> + </button>
-				</p>
+				<div class="row">
+					<div class="col-md-10 text-start">
+
+						<button class="botao">${musica.titulo} - 
+							${musica.artista}</button>
+
+					</div>
+
+					<div class="col-md-2 text-start">
+						<p>
+							<button class="btn btn-primary"
+								onclick="adicionar(${idPlaylist}, ${musica.id})"
+<%-- 								href="./incluirnaplaylist?idmusica=${musica.id}&idplaylist=${idPlaylist}" --%>
+								title="Adicionar a playlist">+</button>
+						</p>
+					</div>
+				</div>
 
 			</c:forEach>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

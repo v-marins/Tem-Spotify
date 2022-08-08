@@ -38,18 +38,17 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page"
-						href="./myaccount.jsp">Home</a> <a class="nav-link"
-						href="./minhasplaylists">Minhas Playlists</a> <a class="nav-link"
-						href="./novaplaylist">Nova Playlists</a> <a class="nav-link"
-						href="./novamusica">Adicionar M&uacute;sica</a> <a
-						class="nav-link" href="#">Logout</a>
+					<a class="nav-link active" aria-current="page" href="./myaccount.jsp">Home</a>
+					<a class="nav-link"	href="./novamusica">Upload de M&uacute;sica</a>
+					<a class="nav-link"	href="./novaplaylist">Nova Playlists</a>
+					<a class="nav-link"	href="./minhasplaylists">Minhas Playlists</a>
+					<a class="nav-link" href="#">Logout</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 
-
+	<div class="container-fluid">
 	<div class="row" id="telaAccount">
 		<div class="col-md-7">
 			<img alt="" src="images/imgbemvindo.png" class="img-fluid">
@@ -63,6 +62,7 @@
 				tecnologia Java onde você pode adicionar suas músicas favoritas,
 				criar playlists e ouvir elas na hora que quiser. Divirta-se!</p>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
