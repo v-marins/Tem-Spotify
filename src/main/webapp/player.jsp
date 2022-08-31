@@ -2,6 +2,9 @@
 <jsp:useBean id="Usuario"
 	type="br.com.viniciusmarins.temaulaspotify.model.Usuario"
 	scope="session" />
+<jsp:useBean id="Playlist"
+	type="br.com.viniciusmarins.temaulaspotify.model.Playlist"
+	scope="session" />
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <html lang="pt-BR">
 <head>
@@ -20,10 +23,11 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
-<link href="css/myplaylists.css" type="text/css" rel="stylesheet">
+<link href="css/player.css" type="text/css" rel="stylesheet">
+<script src="js/myplayer.js"></script>
 
 </head>
-<body>
+<body onload="setupPlayer()">
 	<nav class="navbar sticky-top navbar-expand-lg navbar-light"
 		style="background-color: #1DB954">
 		<div class="container">
@@ -39,45 +43,32 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page" href="./myaccount.jsp">Home</a>
-					<a class="nav-link"	href="./novamusica">Upload de M&uacute;sica</a>
-					<a class="nav-link"	href="./novaplaylist">Nova Playlists</a>
-					<a class="nav-link"	href="./minhasplaylists">Minhas Playlists</a>
-					<a class="nav-link" href="#">Logout</a>
+					<a class="nav-link active" aria-current="page"
+						href="./myaccount.jsp">Home</a> <a class="nav-link"
+						href="./novamusica">Upload de M&uacute;sica</a> <a
+						class="nav-link" href="./novaplaylist">Nova Playlists</a> <a
+						class="nav-link" href="./minhasplaylists">Minhas Playlists</a> <a
+						class="nav-link" href="#">Logout</a>
 				</div>
 			</div>
 		</div>
 	</nav>
-
-	<!-- Interacoes -->
-<div class="container-fluid">
-	<div class="row" id="telaPlaylists">
-		<div class="col-md-7">
-			<img alt="" src="images/imgplaylists.png" class="img-fluid">
-		</div>
-		<div class="col-md-5 text-center">
-			<h1>Suas Playlists</h1>
-
-			<c:forEach var="playlist" items="${Usuario.playlists}">
-				<div class="row">
-					<div class="col-md-7 text-start">
-
-						
-							<button class="botao">${playlist.titulo}</button><br>
-						
-
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col=md=12" id="playerContent">
+				<c:forEach var="Musica" items="${Playlist.musicas}">
+					<div title="${Musica.linkMp3}" class="musica" onclick="play(this)">
+						${Musica.titulo} - ${Musica.artista}
 					</div>
-					<div class="col-md-5 text-start">
-						<p><a class="btn btn-primary"
-							href="playlistdetails?id=${playlist.id}"
-							title="Detalhes da Playlist">Detalhes</a> <a
-							class="btn btn-primary" href="player" title="Tocar">Play</a></p>
-					</div>
-				</div>
-			</c:forEach>
-		</div>
 
+				</c:forEach>
+			</div>
+			<div>
+			<audio id="musicplayer" controls controlsList="nodownload" src=""></audio>
+			<img alt="" src="./images/repeat.png" id="imgRepeat" class="rounded mx-auto d-block" width="3%" align="middle" onclick="changeRepeat()" >
+			</div>
+		</div>
 	</div>
-	</div>
+
 </body>
 </html>

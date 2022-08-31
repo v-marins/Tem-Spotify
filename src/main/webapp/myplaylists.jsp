@@ -71,7 +71,7 @@
 						<p><a class="btn btn-primary"
 							href="playlistdetails?id=${playlist.id}"
 							title="Detalhes da Playlist">Detalhes</a> <a
-							class="btn btn-primary" href="#" title="Tocar">Play</a></p>
+							class="btn btn-primary" href="player" title="Tocar">Play</a></p>
 					</div>
 				</div>
 			</c:forEach>
